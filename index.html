@@ -566,12 +566,12 @@ code, pre {
 <h2>Python Code Implementation Questions </h2>
 
 <div class="question" id="q50">
-    <p>51. Create a getter method for class attribute '_temperature' using @property</p>
+    <p>51. Create a getter method(get_temp)for class attribute '_temperature'</p>
     <textarea name="q50" rows="3" cols="70" required></textarea>
 </div>
 
 <div class="question" id="q51">
-    <p>52. Create a setter for '_price' that ensures value is non-negative</p>
+    <p>52. Create a setter for(set_price) '_price' that ensures value is non-negative</p>
     <textarea name="q51" rows="4" cols="70" required></textarea>
 </div>
 
@@ -586,7 +586,7 @@ code, pre {
 </div>
 
 <div class="question" id="q54">
-    <p>55. Implement a read-only 'serial_number' property</p>
+    <p>55. Implement a getter for (serial_number) with _sn property</p>
     <textarea name="q54" rows="3" cols="70" required></textarea>
 </div>
 
@@ -596,7 +596,7 @@ code, pre {
 </div>
 
 <div class="question" id="q56">
-    <p>57. Create setter that converts input to lowercase for '_name'</p>
+    <p>57. Create setter(name) that converts input to lowercase for '_name'</p>
     <textarea name="q56" rows="4" cols="70" required></textarea>
 </div>
 
@@ -685,8 +685,8 @@ code, pre {
     47: '__str__',
     48: '5',
     49: 'Hello',
-    50: 'def temperature(self):\n    return self._temperature',
-    51: 'def price(self, value):\n    if value >= 0:\n        self._price = value',
+    50: 'def get_temp(self):\n    return self._temperature',
+    51: 'def set_price(self, value):\n    if value >= 0:\n        self._price = value',
     52: 'f=open("data.txt","r")\n    print(f.read())',
     53: 'f=open("log.csv","r")\n    for _ in range(5):\n        print(f.readline())',
     54: 'def serial_number(self):\n    return self._sn',
