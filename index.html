@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <title>Python Quiz (50 Questions)</title>
     <style>
-        .question { margin: 20px 0; padding: 10px; border-left: 4px solid #ddd; }
-        .correct { background-color: #e6ffe6; border-color: #4CAF50; }
-        .incorrect { background-color: #ffe6e6; border-color: #f44336; }
-        #results { margin-top: 20px; padding: 15px; }
+ 
+
+
+<style>
+.question { margin: 20px 0; padding: 10px; border-left: 4px solid #ddd; }
+.correct { background-color: #e6ffe6; border-color: #4CAF50; }
+.incorrect { background-color: #ffe6e6; border-color: #f44336; }
+textarea { width: 100%; font-family: monospace; }
+#results { margin-top: 20px; padding: 15px; }
+code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+</style>
+
+
+        
     </style>
 </head>
 <body>
-    <h1>Python Quiz: Basic to Classes</h1>
+    <h1>Python MOCK EXAM (2 hours)</h1>
+
+  
     <form id="quizForm" onsubmit="return checkAnswers(event)">
 
 <div class="question" id="q0">
@@ -84,7 +96,7 @@
     <label><input type="radio" name="q9" value="pow"> pow</label>
 </div>
 
-        <h2>Conditionals (11-20)</h2>
+        <h2>Conditions</h2>
 
 <div class="question" id="q10">
     <p>11. What is the correct syntax for an if statement in Python?</p>
@@ -175,7 +187,7 @@
     <label><input type="radio" name="q19" value="Error"> Error</label>
 </div>
 
-<h2>Loops (21-30)</h2>
+<h2>Loops</h2>
 
 <div class="question" id="q20">
     <p>21. How do you write a for loop that prints numbers 0 to 4?</p>
@@ -248,7 +260,7 @@
 </div>
 
 
-<h2>Lists & Dictionaries (31-40)</h2>
+<h2>Lists & Dictionaries</h2>
 
 <div class="question" id="q30">
     <p>31. How do you add an item to a list <code>mylist</code>?</p>
@@ -322,7 +334,7 @@
 
 
         
-        <h2>Classes & OOP (41-50)</h2>
+        <h2>Classes & OOP</h2>
 
 <div class="question" id="q40">
     <p>41. How do you define a class named <code>Dog</code>?</p>
@@ -413,6 +425,7 @@
 
 
         <button type="submit">Check Answers</button>
+        <div id="results"></div>
     </form>
 
     <div id="results"></div>
@@ -474,14 +487,36 @@
     47: '__str__',
     48: '5',
     49: 'Hello'
+              50: '@property\ndef temperature(self):\n    return self._temperature',
+    51: '@price.setter\ndef price(self, value):\n    if value >= 0:\n        self._price = value',
+    52: 'with open("data.txt") as f:\n    print(f.read())',
+    53: 'with open("log.csv") as f:\n    for _ in range(5):\n        print(f.readline())',
+    54: '@property\ndef serial_number(self):\n    return self._sn',
+    55: 'with open("journal.txt", "a") as f:\n    f.write("new entry\\n")',
+    56: '@name.setter\ndef name(self, value):\n    self._name = value.lower()',
+    57: 'try:\n    with open("config.ini") as f:\n        pass\nexcept FileNotFoundError:\n    print("File missing")',
+    58: '@property\ndef age(self):\n    return self._age\n\n@age.setter\ndef age(self, value):\n    if value > 0:\n        self._age = value',
+    59: 'with open("data.txt") as f:\n    print(len(f.readlines()))',
+    60: '@property\ndef area(self):\n    return self.width * self.height'
         };
 
-       function checkAnswers(event) {
+     // Helper for code normalization
+function normalizeCode(code) {
+    return code.trim()
+        .toLowerCase()
+        .replace(/\s+/g, ' ')
+        .replace(/["']/g, '')
+        .replace(/_/g, '');
+}
+
+function checkAnswers(event) {
     event.preventDefault();
     let score = 0;
-    let total = 50;
+    let total = 61; // 50 MC + 11 code
     let resultsHTML = "<h3>Results:</h3>";
-    for (let i = 0; i < total; i++) {
+
+    // Multiple-choice (q0–q49)
+    for (let i = 0; i < 50; i++) {
         const questionDiv = document.getElementById(`q${i}`);
         const selected = document.querySelector(`input[name="q${i}"]:checked`);
         if (selected) {
@@ -496,7 +531,24 @@
             resultsHTML += `<p>Q${i+1}: ✗ (No answer. Correct: ${correctAnswers[i]})</p>`;
         }
     }
-    resultsHTML += `<h3>Score: ${score}/50 (${Math.round((score/total)*100)}%)</h3>`;
+
+    // Code-input (q50–q60)
+    for (let i = 50; i <= 60; i++) {
+        const questionDiv = document.getElementById(`q${i}`);
+        const textarea = document.querySelector(`textarea[name="q${i}"]`);
+        if (textarea) {
+            let userAnswer = normalizeCode(textarea.value);
+            let correct = normalizeCode(correctAnswers[i]);
+            let isCorrect = userAnswer.includes(correct) || correct.includes(userAnswer);
+            if (isCorrect) score++;
+            questionDiv.className = `question ${isCorrect ? 'correct' : 'incorrect'}`;
+            resultsHTML += `<p>Q${i+1}: ${isCorrect ? '✓' : '✗'} ${
+                isCorrect ? '' : '(Sample: <code>' + correctAnswers[i] + '</code>)'
+            }</p>`;
+        }
+    }
+
+    resultsHTML += `<h3>Final Score: ${score}/${total} (${Math.round((score/total)*100)}%)</h3>`;
     document.getElementById('results').innerHTML = resultsHTML;
     return false;
 }
