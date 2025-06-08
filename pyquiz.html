@@ -476,28 +476,30 @@
     49: 'Hello'
         };
 
-        function checkAnswers(event) {
-            event.preventDefault();
-            let score = 0;
-            let resultsHTML = "<h3>Results:</h3>";
-
-            for (let i = 0; i < 50; i++) {
-                const questionDiv = document.getElementById(`q${i}`);
-                const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                
-                if (selected) {
-                    const isCorrect = selected.value === correctAnswers[i];
-                    if (isCorrect) score++;
-                    
-                    questionDiv.className = `question ${isCorrect ? 'correct' : 'incorrect'}`;
-                    resultsHTML += `<p>Q${i+1}: ${isCorrect ? '✓ Correct' : '✗ Incorrect'}</p>`;
-                }
-            }
-
-            resultsHTML += `<h3>Final Score: ${score}/50 (${Math.round((score/50)*100)}%)</h3>`;
-            document.getElementById('results').innerHTML = resultsHTML;
-            return false;
+       function checkAnswers(event) {
+    event.preventDefault();
+    let score = 0;
+    let total = 50;
+    let resultsHTML = "<h3>Results:</h3>";
+    for (let i = 0; i < total; i++) {
+        const questionDiv = document.getElementById(`q${i}`);
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected) {
+            const isCorrect = selected.value === correctAnswers[i];
+            if (isCorrect) score++;
+            questionDiv.className = `question ${isCorrect ? 'correct' : 'incorrect'}`;
+            resultsHTML += `<p>Q${i+1}: ${isCorrect ? '✓' : '✗'} ${
+                isCorrect ? '' : '(Correct: ' + correctAnswers[i] + ')'
+            }</p>`;
+        } else {
+            questionDiv.className = 'question incorrect';
+            resultsHTML += `<p>Q${i+1}: ✗ (No answer. Correct: ${correctAnswers[i]})</p>`;
         }
-    </script>
+    }
+    resultsHTML += `<h3>Score: ${score}/50 (${Math.round((score/total)*100)}%)</h3>`;
+    document.getElementById('results').innerHTML = resultsHTML;
+    return false;
+}
+</script>
 </body>
 </html>
