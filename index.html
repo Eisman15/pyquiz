@@ -14,6 +14,148 @@
 textarea { width: 100%; font-family: monospace; }
 #results { margin-top: 20px; padding: 15px; }
 code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        body {
+    background: #f7f9fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+form {
+    max-width: 800px;
+    margin: 30px auto 30px auto;
+    background: #fff;
+    padding: 32px 24px 24px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+}
+
+.question {
+    margin: 30px 0 20px 0;
+    padding: 18px 18px 12px 18px;
+    border-left: 5px solid #b3c6e7;
+    border-radius: 6px;
+    background: #f9fbfd;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.question.correct {
+    background: #e7ffe7;
+    border-color: #46b36b;
+}
+
+.question.incorrect {
+    background: #fff0f0;
+    border-color: #e74c3c;
+}
+
+.question p {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+label {
+    display: block;
+    margin: 6px 0 6px 0;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+    accent-color: #3b82f6;
+    transform: scale(1.2);
+}
+
+textarea {
+    width: 100%;
+    min-height: 48px;
+    font-size: 1em;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    padding: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border: 1.5px solid #b3c6e7;
+    border-radius: 4px;
+    background: #f7fafc;
+    resize: vertical;
+    transition: border 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #eaf4ff;
+}
+
+button[type="submit"] {
+    display: block;
+    margin: 30px auto 0 auto;
+    background: #3b82f6;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 12px 36px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.07);
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #2563eb;
+}
+
+#results {
+    max-width: 800px;
+    margin: 35px auto 0 auto;
+    background: #f6f8fa;
+    border-radius: 10px;
+    padding: 28px 24px 24px 24px;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+    font-size: 1.1em;
+}
+
+#results h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+code, pre {
+    background: #f4f4f4;
+    color: #2d3748;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    font-size: 1em;
+}
+
+@media (max-width: 900px) {
+    form, #results {
+        max-width: 98vw;
+        padding: 10px;
+    }
+    textarea {
+        font-size: 0.98em;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #e9eaf0;
+}
+::-webkit-scrollbar-thumb {
+    background: #b3c6e7;
+    border-radius: 5px;
+}
 </style>
 
 
