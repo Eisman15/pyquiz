@@ -14,40 +14,403 @@
     <h1>Python Quiz: Basic to Classes</h1>
     <form id="quizForm" onsubmit="return checkAnswers(event)">
 
-        <!-- Basic Syntax (15 questions) -->
-        <div class="question" id="q0">
-            <p>1. What is the output of print(2 + 3)?</p>
-            <label><input type="radio" name="q0" value="5" required> 5</label><br>
-            <label><input type="radio" name="q0" value="23"> 23</label><br>
-            <label><input type="radio" name="q0" value="Error"> Error</label><br>
-            <label><input type="radio" name="q0" value="None"> None</label>
-        </div>
+<div class="question" id="q0">
+    <p>1. What is the output of <code>print(3 * 'a')</code>?</p>
+    <label><input type="radio" name="q0" value="aaa" required> aaa</label>
+    <label><input type="radio" name="q0" value="3a"> 3a</label>
+    <label><input type="radio" name="q0" value="Error"> Error</label>
+</div>
 
-        <div class="question" id="q1">
-            <p>2. Which keyword defines a function?</p>
-            <label><input type="radio" name="q1" value="def" required> def</label><br>
-            <label><input type="radio" name="q1" value="function"> function</label><br>
-            <label><input type="radio" name="q1" value="func"> func</label><br>
-            <label><input type="radio" name="q1" value="define"> define</label>
-        </div>
+<div class="question" id="q1">
+    <p>2. Which of these is a valid variable name in Python?</p>
+    <label><input type="radio" name="q1" value="my_var" required> my_var</label>
+    <label><input type="radio" name="q1" value="2var"> 2var</label>
+    <label><input type="radio" name="q1" value="my-var"> my-var</label>
+</div>
 
-        <!-- Add 48 more questions following the same pattern -->
-        <!-- Sample Class/OOP Questions -->
-        <div class="question" id="q48">
-            <p>49. How to create a class inheritance?</p>
-            <label><input type="radio" name="q48" value="class Child(Parent)" required> class Child(Parent)</label><br>
-            <label><input type="radio" name="q48" value="class Parent(Child)"> class Parent(Child)</label><br>
-            <label><input type="radio" name="q48" value="inherit Parent in Child"> inherit Parent in Child</label><br>
-            <label><input type="radio" name="q48" value="class Child: Parent"> class Child: Parent</label>
-        </div>
+<div class="question" id="q2">
+    <p>3. What is the output of <code>print(type(5))</code>?</p>
+    <label><input type="radio" name="q2" value="&lt;class 'int'&gt;" required> &lt;class 'int'&gt;</label>
+    <label><input type="radio" name="q2" value="int"> int</label>
+    <label><input type="radio" name="q2" value="&lt;type 'int'&gt;"> &lt;type 'int'&gt;</label>
+</div>
 
-        <div class="question" id="q49">
-            <p>50. What is __init__ method used for?</p>
-            <label><input type="radio" name="q49" value="Constructor" required> Constructor</label><br>
-            <label><input type="radio" name="q49" value="Destructor"> Destructor</label><br>
-            <label><input type="radio" name="q49" value="Class name"> Class name</label><br>
-            <label><input type="radio" name="q49" value="Inheritance"> Inheritance</label>
-        </div>
+<div class="question" id="q3">
+    <p>4. Which function is used to get user input in Python 3?</p>
+    <label><input type="radio" name="q3" value="input()" required> input()</label>
+    <label><input type="radio" name="q3" value="raw_input()"> raw_input()</label>
+    <label><input type="radio" name="q3" value="get()"> get()</label>
+</div>
+
+<div class="question" id="q4">
+    <p>5. What is the output of <code>print(10 // 3)</code>?</p>
+    <label><input type="radio" name="q4" value="3" required> 3</label>
+    <label><input type="radio" name="q4" value="3.333"> 3.333</label>
+    <label><input type="radio" name="q4" value="3.0"> 3.0</label>
+</div>
+
+<div class="question" id="q5">
+    <p>6. Which of these is NOT a Python data type?</p>
+    <label><input type="radio" name="q5" value="real" required> real</label>
+    <label><input type="radio" name="q5" value="int"> int</label>
+    <label><input type="radio" name="q5" value="bool"> bool</label>
+</div>
+
+<div class="question" id="q6">
+    <p>7. What does <code>len('hello')</code> return?</p>
+    <label><input type="radio" name="q6" value="5" required> 5</label>
+    <label><input type="radio" name="q6" value="4"> 4</label>
+    <label><input type="radio" name="q6" value="Error"> Error</label>
+</div>
+
+<div class="question" id="q7">
+    <p>8. Which operator is used for string concatenation?</p>
+    <label><input type="radio" name="q7" value="+" required> +</label>
+    <label><input type="radio" name="q7" value="&"> &amp;</label>
+    <label><input type="radio" name="q7" value="."> .</label>
+</div>
+
+<div class="question" id="q8">
+    <p>9. What is the output of <code>print(2 ** 3)</code>?</p>
+    <label><input type="radio" name="q8" value="8" required> 8</label>
+    <label><input type="radio" name="q8" value="6"> 6</label>
+    <label><input type="radio" name="q8" value="9"> 9</label>
+</div>
+
+<div class="question" id="q9">
+    <p>10. Which operator is used for exponentiation?</p>
+    <label><input type="radio" name="q9" value="**" required> **</label>
+    <label><input type="radio" name="q9" value="^"> ^</label>
+    <label><input type="radio" name="q9" value="pow"> pow</label>
+</div>
+
+        <h2>Conditionals (11-20)</h2>
+
+<div class="question" id="q10">
+    <p>11. What is the correct syntax for an if statement in Python?</p>
+    <label><input type="radio" name="q10" value="if x > 5:" required> if x > 5:</label>
+    <label><input type="radio" name="q10" value="if (x > 5)"> if (x > 5)</label>
+    <label><input type="radio" name="q10" value="if x > 5 then"> if x > 5 then</label>
+</div>
+
+<div class="question" id="q11">
+    <p>12. Which keyword is used for the alternative condition in an if statement?</p>
+    <label><input type="radio" name="q11" value="elif" required> elif</label>
+    <label><input type="radio" name="q11" value="elseif"> elseif</label>
+    <label><input type="radio" name="q11" value="else if"> else if</label>
+</div>
+
+<div class="question" id="q12">
+    <p>13. What will be the output?<br>
+    <code>x = 10<br>
+    if x &gt; 5:<br>
+    &nbsp;&nbsp;print("Yes")<br>
+    else:<br>
+    &nbsp;&nbsp;print("No")</code>
+    </p>
+    <label><input type="radio" name="q12" value="Yes" required> Yes</label>
+    <label><input type="radio" name="q12" value="No"> No</label>
+    <label><input type="radio" name="q12" value="Error"> Error</label>
+</div>
+
+<div class="question" id="q13">
+    <p>14. Which operator checks for equality?</p>
+    <label><input type="radio" name="q13" value="==" required> ==</label>
+    <label><input type="radio" name="q13" value="="> =</label>
+    <label><input type="radio" name="q13" value="==="> ===</label>
+</div>
+
+<div class="question" id="q14">
+    <p>15. What is the result of <code>bool(0)</code>?</p>
+    <label><input type="radio" name="q14" value="False" required> False</label>
+    <label><input type="radio" name="q14" value="True"> True</label>
+    <label><input type="radio" name="q14" value="0"> 0</label>
+</div>
+
+<div class="question" id="q15">
+    <p>16. Which logical operator represents "and" in Python?</p>
+    <label><input type="radio" name="q15" value="and" required> and</label>
+    <label><input type="radio" name="q15" value="&amp;&amp;"> &amp;&amp;</label>
+    <label><input type="radio" name="q15" value="&amp;"> &amp;</label>
+</div>
+
+<div class="question" id="q16">
+    <p>17. What is the output?<br>
+    <code>a = 3<br>
+    b = 5<br>
+    if a &gt; b:<br>
+    &nbsp;&nbsp;print("a")<br>
+    else:<br>
+    &nbsp;&nbsp;print("b")</code>
+    </p>
+    <label><input type="radio" name="q16" value="b" required> b</label>
+    <label><input type="radio" name="q16" value="a"> a</label>
+    <label><input type="radio" name="q16" value="Error"> Error</label>
+</div>
+
+<div class="question" id="q17">
+    <p>18. What does the <code>not</code> operator do?</p>
+    <label><input type="radio" name="q17" value="Inverts the truth value" required> Inverts the truth value</label>
+    <label><input type="radio" name="q17" value="Checks for equality"> Checks for equality</label>
+    <label><input type="radio" name="q17" value="Performs addition"> Performs addition</label>
+</div>
+
+<div class="question" id="q18">
+    <p>19. Which of these is a valid else statement?</p>
+    <label><input type="radio" name="q18" value="else:" required> else:</label>
+    <label><input type="radio" name="q18" value="else"> else</label>
+    <label><input type="radio" name="q18" value="otherwise:"> otherwise:</label>
+</div>
+
+<div class="question" id="q19">
+    <p>20. What is the output?<br>
+    <code>x = 0<br>
+    if x:<br>
+    &nbsp;&nbsp;print("Yes")<br>
+    else:<br>
+    &nbsp;&nbsp;print("No")</code>
+    </p>
+    <label><input type="radio" name="q19" value="No" required> No</label>
+    <label><input type="radio" name="q19" value="Yes"> Yes</label>
+    <label><input type="radio" name="q19" value="Error"> Error</label>
+</div>
+
+<h2>Loops (21-30)</h2>
+
+<div class="question" id="q20">
+    <p>21. How do you write a for loop that prints numbers 0 to 4?</p>
+    <label><input type="radio" name="q20" value="for i in range(5):" required> for i in range(5):</label>
+    <label><input type="radio" name="q20" value="for i = 0 to 4"> for i = 0 to 4</label>
+    <label><input type="radio" name="q20" value="for i in 0..4"> for i in 0..4</label>
+</div>
+
+<div class="question" id="q21">
+    <p>22. What is the output of <code>for i in range(3): print(i)</code>?</p>
+    <label><input type="radio" name="q21" value="0 1 2" required> 0 1 2</label>
+    <label><input type="radio" name="q21" value="1 2 3"> 1 2 3</label>
+    <label><input type="radio" name="q21" value="0 1 2 3"> 0 1 2 3</label>
+</div>
+
+<div class="question" id="q22">
+    <p>23. Which keyword is used to skip the current iteration in a loop?</p>
+    <label><input type="radio" name="q22" value="continue" required> continue</label>
+    <label><input type="radio" name="q22" value="skip"> skip</label>
+    <label><input type="radio" name="q22" value="pass"> pass</label>
+</div>
+
+<div class="question" id="q23">
+    <p>24. What is the output of <code>while False: print("Hello")</code>?</p>
+    <label><input type="radio" name="q23" value="Nothing" required> Nothing</label>
+    <label><input type="radio" name="q23" value="Hello"> Hello</label>
+    <label><input type="radio" name="q23" value="Error"> Error</label>
+</div>
+
+<div class="question" id="q24">
+    <p>25. Which keyword is used to exit a loop prematurely?</p>
+    <label><input type="radio" name="q24" value="break" required> break</label>
+    <label><input type="radio" name="q24" value="stop"> stop</label>
+    <label><input type="radio" name="q24" value="exit"> exit</label>
+</div>
+
+<div class="question" id="q25">
+    <p>26. What does <code>range(2, 6)</code> produce?</p>
+    <label><input type="radio" name="q25" value="2 3 4 5" required> 2 3 4 5</label>
+    <label><input type="radio" name="q25" value="2 3 4 5 6"> 2 3 4 5 6</label>
+    <label><input type="radio" name="q25" value="3 4 5 6"> 3 4 5 6</label>
+</div>
+
+<div class="question" id="q26">
+    <p>27. Which loop will always run at least once?</p>
+    <label><input type="radio" name="q26" value="do-while (not in Python)" required> do-while (not in Python)</label>
+    <label><input type="radio" name="q26" value="for"> for</label>
+    <label><input type="radio" name="q26" value="while"> while</label>
+</div>
+
+<div class="question" id="q27">
+    <p>28. What is the output of <code>for c in "hi": print(c)</code>?</p>
+    <label><input type="radio" name="q27" value="h i" required> h i</label>
+    <label><input type="radio" name="q27" value="hi"> hi</label>
+    <label><input type="radio" name="q27" value="Error"> Error</label>
+</div>
+
+<div class="question" id="q28">
+    <p>29. Which statement is used to do nothing in a loop?</p>
+    <label><input type="radio" name="q28" value="pass" required> pass</label>
+    <label><input type="radio" name="q28" value="skip"> skip</label>
+    <label><input type="radio" name="q28" value="continue"> continue</label>
+</div>
+
+<div class="question" id="q29">
+    <p>30. What is the output of <code>for i in range(1, 10, 3): print(i)</code>?</p>
+    <label><input type="radio" name="q29" value="1 4 7" required> 1 4 7</label>
+    <label><input type="radio" name="q29" value="1 2 3 4 5 6 7 8 9"> 1 2 3 4 5 6 7 8 9</label>
+    <label><input type="radio" name="q29" value="1 3 5 7 9"> 1 3 5 7 9</label>
+</div>
+
+
+<h2>Lists & Dictionaries (31-40)</h2>
+
+<div class="question" id="q30">
+    <p>31. How do you add an item to a list <code>mylist</code>?</p>
+    <label><input type="radio" name="q30" value="mylist.append(x)" required> mylist.append(x)</label>
+    <label><input type="radio" name="q30" value="mylist.add(x)"> mylist.add(x)</label>
+    <label><input type="radio" name="q30" value="mylist.insert(x)"> mylist.insert(x)</label>
+</div>
+
+<div class="question" id="q31">
+    <p>32. What is the output of <code>len([1, 2, 3, 4])</code>?</p>
+    <label><input type="radio" name="q31" value="4" required> 4</label>
+    <label><input type="radio" name="q31" value="3"> 3</label>
+    <label><input type="radio" name="q31" value="5"> 5</label>
+</div>
+
+<div class="question" id="q32">
+    <p>33. How do you access the value associated with key <code>'a'</code> in dictionary <code>d</code>?</p>
+    <label><input type="radio" name="q32" value="d['a']" required> d['a']</label>
+    <label><input type="radio" name="q32" value="d.a"> d.a</label>
+    <label><input type="radio" name="q32" value="d('a')"> d('a')</label>
+</div>
+
+<div class="question" id="q33">
+    <p>34. Which method removes and returns the last item from a list?</p>
+    <label><input type="radio" name="q33" value="pop()" required> pop()</label>
+    <label><input type="radio" name="q33" value="remove()"> remove()</label>
+    <label><input type="radio" name="q33" value="del()"> del()</label>
+</div>
+
+<div class="question" id="q34">
+    <p>35. What is the output of <code>mylist = [1,2,3]; print(mylist[1])</code>?</p>
+    <label><input type="radio" name="q34" value="2" required> 2</label>
+    <label><input type="radio" name="q34" value="1"> 1</label>
+    <label><input type="radio" name="q34" value="3"> 3</label>
+</div>
+
+<div class="question" id="q35">
+    <p>36. Which of the following creates a tuple?</p>
+    <label><input type="radio" name="q35" value="(1, 2, 3)" required> (1, 2, 3)</label>
+    <label><input type="radio" name="q35" value="[1, 2, 3]"> [1, 2, 3]</label>
+    <label><input type="radio" name="q35" value="{1, 2, 3}"> {1, 2, 3}</label>
+</div>
+
+<div class="question" id="q36">
+    <p>37. Which method checks if a key exists in a dictionary?</p>
+    <label><input type="radio" name="q36" value="in" required> in</label>
+    <label><input type="radio" name="q36" value="has_key()"> has_key()</label>
+    <label><input type="radio" name="q36" value="exists()"> exists()</label>
+</div>
+
+<div class="question" id="q37">
+    <p>38. What does <code>mylist[1:3]</code> return if <code>mylist = [10,20,30,40]</code>?</p>
+    <label><input type="radio" name="q37" value="[20, 30]" required> [20, 30]</label>
+    <label><input type="radio" name="q37" value="[10, 20, 30]"> [10, 20, 30]</label>
+    <label><input type="radio" name="q37" value="[30, 40]"> [30, 40]</label>
+</div>
+
+<div class="question" id="q38">
+    <p>39. Which method returns all keys of a dictionary?</p>
+    <label><input type="radio" name="q38" value="keys()" required> keys()</label>
+    <label><input type="radio" name="q38" value="get_keys()"> get_keys()</label>
+    <label><input type="radio" name="q38" value="allKeys()"> allKeys()</label>
+</div>
+
+<div class="question" id="q39">
+    <p>40. What is the output of <code>len({'a':1, 'b':2})</code>?</p>
+    <label><input type="radio" name="q39" value="2" required> 2</label>
+    <label><input type="radio" name="q39" value="1"> 1</label>
+    <label><input type="radio" name="q39" value="0"> 0</label>
+</div>
+
+
+        
+        <h2>Classes & OOP (41-50)</h2>
+
+<div class="question" id="q40">
+    <p>41. How do you define a class named <code>Dog</code>?</p>
+    <label><input type="radio" name="q40" value="class Dog:" required> class Dog:</label>
+    <label><input type="radio" name="q40" value="def Dog():"> def Dog():</label>
+    <label><input type="radio" name="q40" value="Dog = class()"> Dog = class()</label>
+</div>
+
+<div class="question" id="q41">
+    <p>42. What is the name of the method used to initialize an object?</p>
+    <label><input type="radio" name="q41" value="__init__" required> __init__</label>
+    <label><input type="radio" name="q41" value="__start__"> __start__</label>
+    <label><input type="radio" name="q41" value="__create__"> __create__</label>
+</div>
+
+<div class="question" id="q42">
+    <p>43. What is the first parameter of an instance method?</p>
+    <label><input type="radio" name="q42" value="self" required> self</label>
+    <label><input type="radio" name="q42" value="this"> this</label>
+    <label><input type="radio" name="q42" value="cls"> cls</label>
+</div>
+
+<div class="question" id="q43">
+    <p>44. How do you create an object <code>fido</code> from class <code>Dog</code>?</p>
+    <label><input type="radio" name="q43" value="fido = Dog()" required> fido = Dog()</label>
+    <label><input type="radio" name="q43" value="fido = Dog"> fido = Dog</label>
+    <label><input type="radio" name="q43" value="Dog = fido()"> Dog = fido()</label>
+</div>
+
+<div class="question" id="q44">
+    <p>45. How do you define a class attribute?</p>
+    <label><input type="radio" name="q44" value="Inside the class, outside methods" required> Inside the class, outside methods</label>
+    <label><input type="radio" name="q44" value="Inside __init__"> Inside __init__</label>
+    <label><input type="radio" name="q44" value="With global keyword"> With global keyword</label>
+</div>
+
+<div class="question" id="q45">
+    <p>46. What is the base class of all new-style classes in Python 3?</p>
+    <label><input type="radio" name="q45" value="object" required> object</label>
+    <label><input type="radio" name="q45" value="class"> class</label>
+    <label><input type="radio" name="q45" value="Base"> Base</label>
+</div>
+
+<div class="question" id="q46">
+    <p>47. How do you inherit from a class <code>Animal</code>?</p>
+    <label><input type="radio" name="q46" value="class Dog(Animal):" required> class Dog(Animal):</label>
+    <label><input type="radio" name="q46" value="class Dog extends Animal:"> class Dog extends Animal:</label>
+    <label><input type="radio" name="q46" value="class Dog->Animal:"> class Dog-&gt;Animal:</label>
+</div>
+
+<div class="question" id="q47">
+    <p>48. Which method is called when you use <code>str()</code> on an object?</p>
+    <label><input type="radio" name="q47" value="__str__" required> __str__</label>
+    <label><input type="radio" name="q47" value="__repr__"> __repr__</label>
+    <label><input type="radio" name="q47" value="__print__"> __print__</label>
+</div>
+
+<div class="question" id="q48">
+    <p>49. What is the output of:<br>
+    <code>
+    class A:<br>
+    &nbsp;&nbsp;def __init__(self):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;self.x = 5<br>
+    a = A()<br>
+    print(a.x)
+    </code>
+    </p>
+    <label><input type="radio" name="q48" value="5" required> 5</label>
+    <label><input type="radio" name="q48" value="x"> x</label>
+    <label><input type="radio" name="q48" value="Error"> Error</label>
+</div>
+
+<div class="question" id="q49">
+    <p>50. What is the output of:<br>
+    <code>
+    class B:<br>
+    &nbsp;&nbsp;def greet(self):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("Hello")<br>
+    b = B()<br>
+    b.greet()
+    </code>
+    </p>
+    <label><input type="radio" name="q49" value="Hello" required> Hello</label>
+    <label><input type="radio" name="q49" value="greet"> greet</label>
+    <label><input type="radio" name="q49" value="Error"> Error</label>
+</div>
+
+
 
         <button type="submit">Check Answers</button>
     </form>
@@ -56,14 +419,61 @@
 
     <script>
         const correctAnswers = {
-            // Basic Syntax
-            0: '5',
-            1: 'def',
-            
-            // ... Add answers for all 50 questions
-            // Class/OOP Answers
-            48: 'class Child(Parent)',
-            49: 'Constructor'
+      
+           0: 'aaa',
+    1: 'my_var',
+    2: "<class 'int'>",
+    3: 'input()',
+    4: '3',
+    5: 'real',
+    6: '5',
+    7: '+',
+    8: '8',
+    9: '**',
+
+    10: 'if x > 5:',
+    11: 'elif',
+    12: 'Yes',
+    13: '==',
+    14: 'False',
+    15: 'and',
+    16: 'b',
+    17: 'Inverts the truth value',
+    18: 'else:',
+    19: 'No',
+ 
+    20: 'for i in range(5):',
+    21: '0 1 2',
+    22: 'continue',
+    23: 'Nothing',
+    24: 'break',
+    25: '2 3 4 5',
+    26: 'do-while (not in Python)',
+    27: 'h i',
+    28: 'pass',
+    29: '1 4 7',
+
+    30: 'mylist.append(x)',
+    31: '4',
+    32: "d['a']",
+    33: 'pop()',
+    34: '2',
+    35: '(1, 2, 3)',
+    36: 'in',
+    37: '[20, 30]',
+    38: 'keys()',
+    39: '2',
+   
+    40: 'class Dog:',
+    41: '__init__',
+    42: 'self',
+    43: 'fido = Dog()',
+    44: 'Inside the class, outside methods',
+    45: 'object',
+    46: 'class Dog(Animal):',
+    47: '__str__',
+    48: '5',
+    49: 'Hello'
         };
 
         function checkAnswers(event) {
