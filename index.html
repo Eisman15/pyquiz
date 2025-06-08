@@ -693,7 +693,7 @@ code, pre {
     55: 'f=open("journal.txt", "a")\n    f.write("new entry\\n")',
     56: 'def name(self, value):\n    self._name = value.lower()',
     57: 'try:\n    with open("config.ini") as f:\n        pass\nexcept FileNotFoundError:\n    print("File missing")',
-    58: 'def age(self):\n    return self._age\n\n@age.setter\ndef age(self, value):\n    if value > 0:\n        self._age = value',
+    58: 'def age(self, value):\n    if value > 0:\n        self._age = value',
     59: 'f=open("data.txt","r")\n    print(len(f.readlines()))',
     60: 'def area(self):\n    return self.width * self.height'
         };
