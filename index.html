@@ -687,14 +687,14 @@ code, pre {
     49: 'Hello',
     50: 'def temperature(self):\n    return self._temperature',
     51: 'def price(self, value):\n    if value >= 0:\n        self._price = value',
-    52: 'f=open("data.txt")\n    print(f.read())',
-    53: 'f=open("log.csv")\n    for _ in range(5):\n        print(f.readline())',
+    52: 'f=open("data.txt","r")\n    print(f.read())',
+    53: 'f=open("log.csv","r")\n    for _ in range(5):\n        print(f.readline())',
     54: 'def serial_number(self):\n    return self._sn',
     55: 'f=open("journal.txt", "a")\n    f.write("new entry\\n")',
     56: 'def name(self, value):\n    self._name = value.lower()',
     57: 'try:\n    with open("config.ini") as f:\n        pass\nexcept FileNotFoundError:\n    print("File missing")',
     58: 'def age(self):\n    return self._age\n\n@age.setter\ndef age(self, value):\n    if value > 0:\n        self._age = value',
-    59: 'f=open("data.txt")\n    print(len(f.readlines()))',
+    59: 'f=open("data.txt","r")\n    print(len(f.readlines()))',
     60: 'def area(self):\n    return self.width * self.height'
         };
 
